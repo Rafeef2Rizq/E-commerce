@@ -1,0 +1,14 @@
+$text-color: #212121;
+$light-gray-background: #F5F5F5;
+$separator-color: #CDCDCD;
+$gutter: 30px;
+.breadcrumbs {
+    background: $light-gray-background;
+    border-bottom: 1px solid $separator-color;
+    padding: 24px 0;
+
+    .breadcrumb-separator {
+        font-size: 14px;
+        color: lighten($text-color, 20%);
+    }
+}
