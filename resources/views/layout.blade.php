@@ -9,7 +9,7 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
         <title>Laravel Ecommerce | @yield('title', '')</title>
-
+        <script src="https://js.stripe.com/v3/"></script>
         <link href="/img/favicon.ico" rel="SHORTCUT ICON" />
 
         <!-- Fonts -->
@@ -26,7 +26,9 @@
         'resources/assert/sass/pages/sidebar.scss',
         'resources/assert/sass/pages/cart.scss',
         'resources/assert/sass/pages/header.scss',
-        'resources/assert/sass/pages/alert.scss'])
+        'resources/assert/sass/pages/alert.scss',
+        'resources/assert/sass/pages/checkout.scss',
+        'resources/assert/sass/pages/form.scss',])
 
 
       
@@ -41,6 +43,6 @@
     @include('partials.footer')
 
 
-
+@yield('extra-js')
 </body>
 </html>
