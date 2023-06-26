@@ -14,6 +14,8 @@ export default defineConfig({
              "resources/assert/sass/pages/cart.scss",
              "resources/assert/sass/pages/header.scss",
              "resources/assert/sass/pages/alert.scss",
+             "resources/assert/sass/pages/checkout.scss",
+             "resources/assert/sass/pages/form.scss",
             // "resources/assert/sass/pages/landing-page.scss",
             ], // add scss file
             refresh: true,
