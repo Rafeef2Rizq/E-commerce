@@ -44,6 +44,7 @@
     @include('partials.footer')
 
 
+    @yield('extra-js')
     @yield('script')
 </body>
 </html>

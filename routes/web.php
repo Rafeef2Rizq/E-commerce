@@ -24,7 +24,9 @@ Route::get('/shop',[ShopController::class,'index'])->name('shop.index');
 Route::get('/shop/{slug}',[ShopController::class,'show'])->name('shop.show');
 Route::get('/cart',[CartController::class,'index'])->name('cart.index');
 Route::post('/cart',[CartController::class,'store'])->name('cart.store');
+Route::patch('/cart/{product}',[CartController::class,'update'])->name('cart.update');
 Route::delete('/cart/{product}',[CartController::class,'destroy'])->name('cart.destroy');
+
 Route::post('/cart/switchForLater/{product}',[CartController::class,'switchForLater'])->name('cart.switchForLater');
 Route::delete('/saveForLater/{product}',[SaveForLaterController::class,'destroy'])->name('saveForLater.destroy');
 Route::post('/saveForLater/switchForLater/{product}',[SaveForLaterController::class,'switchToCar'])->
