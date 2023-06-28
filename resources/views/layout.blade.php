@@ -9,13 +9,11 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
         <title>Laravel Ecommerce | @yield('title', '')</title>
-        <script src="https://js.stripe.com/v3/"></script>
-        <link href="/img/favicon.ico" rel="SHORTCUT ICON" />
+ 
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Montserrat%7CRoboto:300,400,700" rel="stylesheet">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
         <!-- Styles -->
         @vite(['resources/assert/sass/pages/shop.scss',
         'resources/assert/sass/pages/product.scss',
@@ -28,7 +26,10 @@
         'resources/assert/sass/pages/header.scss',
         'resources/assert/sass/pages/alert.scss',
         'resources/assert/sass/pages/checkout.scss',
-        'resources/assert/sass/pages/form.scss',])
+        'resources/assert/sass/pages/form.scss',
+        'resources/assert/sass/pages/thankyou.scss',
+        'resources/assert/sass/pages/buttons.scss'
+        ])
 
 
       
@@ -43,6 +44,7 @@
     @include('partials.footer')
 
 
-@yield('extra-js')
+    @yield('extra-js')
+    @yield('script')
 </body>
 </html>
