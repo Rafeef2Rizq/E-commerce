@@ -18,7 +18,7 @@
             <h3>By Category</h3>
             <ul>
                 @foreach ($categories as $category)
-                <li><a href="{{route('shop.index',['category'=>$category->slug])}}">{{$category->name}}</a></li>
+                <li class="{{setActiveCategory($category->slug,'active')}}"><a href="{{route('shop.index',['category'=>$category->slug])}}">{{$category->name}}</a></li>
 
                 @endforeach
               
@@ -48,10 +48,13 @@
         </div>     
         @empty
             <div class="alert alert-danger">No item founded</div>
+            
         @endforelse
-        
+      
             </div> <!-- end products -->
-            {!! $products->links() !!}
+            <div class="spacer"></div>
+            {{$products->links()  }}
+            <div class="spacer"></div>
         </div>
     </div>
 

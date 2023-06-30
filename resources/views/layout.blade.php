@@ -28,7 +28,8 @@
         'resources/assert/sass/pages/checkout.scss',
         'resources/assert/sass/pages/form.scss',
         'resources/assert/sass/pages/thankyou.scss',
-        'resources/assert/sass/pages/buttons.scss'
+        'resources/assert/sass/pages/buttons.scss',
+        'resources/assert/sass/pages/pagination.scss'
         ])
 
 

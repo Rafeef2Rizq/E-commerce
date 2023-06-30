@@ -125,24 +125,48 @@
                     <div class="checkout-totals">
                         <div class="checkout-totals-left">
                             Subtotal <br>
-                            {{-- Discount (10OFF - 10%) <br> --}}
+                           @if (session()->has('coupon'))
+                           Discount({{!is_null(session()->get('coupon')) ?session()->get('coupon')['name']:''}} ):
+                           <form action="{{route('coupons.destroy')}}"method="post" style="display: inline">
+                           @csrf
+                       @method('delete')
+                       <button type="submit">Remove</button>
+                       </form><br>
+                       <hr>
+                       New subtotal <br>
+                           @endif
                             Tax <br>
                             <span class="checkout-totals-total">Total</span>
 
                         </div>
-
+                        
                         <div class="checkout-totals-right">
-                            ${{ presentPrice(Cart::subtotal()) }}<br>
-                            {{-- -$750.00 <br> --}}
-                            ${{ presentPrice(Cart::tax()) }} <br>
-                            <span class="checkout-totals-total">${{ presentPrice(Cart::total()) }}</span>
+                            {{ presentPrice(Cart::subtotal()) }}<br>
+                            @if (session()->has('coupon'))
+                            -{{presentPrice($discount) }}<br>
+                            <hr>
+                            {{presentPrice($newSubtotal)}} <br>
+                            @endif
+
+                            {{ presentPrice($newTax) }} <br>
+                            <span class="checkout-totals-total">${{  presentPrice($newTotal) }}</span>
 
                         </div>
                     </div> <!-- end checkout-totals -->
 
                 </div>
-
+                @if (!session()->has('coupon'))
+                <a href="#" class="have-code">Have a Code?</a>
+                <div class="have-code-container">
+                    <form action="{{route('coupons.store')}}" method="post">
+                        @csrf
+                        <input type="text" name="coupon_code" id="coupon_code">
+                        <button type="submit" class="button button-plain">Apply</button>
+                    </form>
+                </div> <!-- end have-code-container -->
+                @endif
             </div> <!-- end checkout-section -->
+            
         </div>
     </div>
 @endsection

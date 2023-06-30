@@ -18,6 +18,7 @@ export default defineConfig({
              "resources/assert/sass/pages/form.scss",
              "resources/assert/sass/pages/thankyou.scss",
              "resources/assert/sass/pages/buttons.scss",
+             "resources/assert/sass/pages/pagination.scss",
             // "resources/assert/sass/pages/landing-page.scss",
             ], // add scss file
             refresh: true,
